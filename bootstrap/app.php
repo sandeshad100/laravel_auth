@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
-        $middleware->append(TestUser::class);
+        // $middleware->append(TestUser::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
