@@ -13,6 +13,8 @@
     <h1>Home</h1>
     <a href="{{ route('register') }}"><button class="btn btn-success">Register</button></a>
     <a href="{{ route('login') }}"><button class="btn btn-success">Login</button></a>
+    <a href="{{ route('dashboard') }}"><button class="btn btn-primary">Dashboard</button></a>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
