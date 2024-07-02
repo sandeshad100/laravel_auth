@@ -10,8 +10,10 @@
 </head>
 
 <body>
-    <h1>Register</h1>
+
+
     <div class="container">
+        <h1>Register</h1>
         <form action="{{ route('registerSave') }}" method="POST">
             @csrf
             <div class="mb-3">
