@@ -15,7 +15,7 @@ Route::view('login', 'login')->name('login');
 Route::post('loginMatch', [UserController::class, 'login'])->name('loginMatch');
 
 //middleware groups
-Route::middleware([ValidUser::class.':admin', TestUser::class])->group(function () {
+Route::middleware([ValidUser::class.':admin,reader', TestUser::class])->group(function () {
     Route::get('dashboard', [UserController::class, 'dashboardPage'])->name('dashboard');
 });
 
@@ -23,3 +23,4 @@ Route::middleware([ValidUser::class.':admin', TestUser::class])->group(function 
 
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 Route::get('guest', [UserController::class, 'guestPage'])->name('guest');
+Route::view('user', 'user')->name('user');

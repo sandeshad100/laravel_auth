@@ -17,17 +17,17 @@ class ValidUser
     public function handle(Request $request, Closure $next, string $role): Response
     {
         echo "<h3 class='text-primary'>We are now in Valid User Middleware</h3>";
-        echo "<h3 class='text-primary'>".$role."</h3>";
+        echo "<h3 class='text-primary'>" . $role . "</h3>";
         if (Auth::check() && Auth::user()->role == $role) {
             return $next($request);
+        } elseif (Auth::user()->role == "reader") {
+            return redirect()->route('user');
         } else {
             return redirect()->route('login');
         }
-
     }
     public function terminate(Request $request, Response $response): void
     {
         echo "<h3 class='text-danger'>We are now terminating ValidUser Middleware, runs after completing user request</h3>";
-
     }
 }
